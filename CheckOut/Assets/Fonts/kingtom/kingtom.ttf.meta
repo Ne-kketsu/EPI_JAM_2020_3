@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f237542054c73e218adef398ead7a4df
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: kingtom_demo
+  fontNames:
+  - kingtom_demo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 42282464b916ab3c5acf4acb1a884405, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
