@@ -86,8 +86,8 @@ public class boardActions : MonoBehaviour
     {
         bgScript.switchColor(escapeGateScript.switchColor);
         setActive(false);
-        cameraScript.nextLvl();
         isCompleted = true;
+        cameraScript.nextLvl();
     }
     public void pause()
     {

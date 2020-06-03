@@ -26,7 +26,6 @@ public class menuAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(escapeGateScript.getGateState());
         if (Input.GetAxisRaw("Horizontal") > 0) {
             boardTransform.RotateAround(target, Vector3.back, 60 * Time.deltaTime);
             bgScript.rotate(1);
@@ -35,6 +34,8 @@ public class menuAction : MonoBehaviour
             boardTransform.RotateAround(target, Vector3.forward, 60 * Time.deltaTime);
             bgScript.rotate(-1);
         }
+        if (pScript.getState())
+            reset();
     }
 
     public void reset()

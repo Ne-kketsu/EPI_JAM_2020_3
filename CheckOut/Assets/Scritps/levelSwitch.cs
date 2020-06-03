@@ -9,10 +9,12 @@ public class levelSwitch : MonoBehaviour
     public float smoothSpeed;
     public Vector3 offset;
     private int level = 0;
+    private int lastLevel = 0;
     // Start is called before the first frame update
     void Awake()
     {
         setBoardActive(true);
+        lastLevel = boardsTargets.Length - 1;
     }
 
     // Update is called once per frame
@@ -23,14 +25,15 @@ public class levelSwitch : MonoBehaviour
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
 
             transform.position = smoothedPosition;
-            _switch = false;
+            // _switch = false;
         }
         if (Input.GetKeyDown(KeyCode.Escape)) {
             prevLvl();
             // setBoardActive(true);
         }
         if (Input.GetKeyDown(KeyCode.Return)) {
-            nextLvl();
+            if (level < boardsTargets.Length - 2)
+                nextLvl();
             // setBoardActive(true);
         }
         Switch();
@@ -52,9 +55,21 @@ public class levelSwitch : MonoBehaviour
         }
         setBoardActive(true);
     }
+    public bool allLevelCompleted()
+    {
+        bool _allCompleted = true;
+
+        for (int i = 0; i < lastLevel; i += 1)
+            if (!boardsTargets[i].Find("gameBoard").GetComponent<boardActions>().getCompleted())
+                _allCompleted = false;
+
+        return _allCompleted;
+    }
     public void nextLvl()
     {
-        if (level < boardsTargets.Length - 1)
+        if (allLevelCompleted())
+            level = lastLevel;
+        else if (level < boardsTargets.Length - 2)
             level += 1; 
     }
     public void prevLvl()
