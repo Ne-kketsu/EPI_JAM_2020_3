@@ -1,6 +1,9 @@
 # EPI_JAM_2020_3
 48h Epitech Jam 3rd edition. [THEME: ESCAPE]
 
+# CheckOut Preview
+![CheckOut](CheckOutPrev.gif)
+
 *HOW TO PLAY :*
 # Linux
 -   Open your terminal in 'EPI_JAM_2020_3/bin/Linux' and run './CheckOut.x86_64'
